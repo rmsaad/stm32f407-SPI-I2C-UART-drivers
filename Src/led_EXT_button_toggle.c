@@ -31,10 +31,6 @@ int main(void)
 	gpioBTN.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	gpioBTN.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
 
-
-	GPIO_PCLKControl(GPIOD, ENABLE);
-	GPIO_PCLKControl(GPIOB, ENABLE);
-
 	GPIO_Init(&gpioLED);
 	GPIO_Init(&gpioBTN);
 

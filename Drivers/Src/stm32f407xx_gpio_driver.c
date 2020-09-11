@@ -92,6 +92,9 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
 	/* temporary storage*/
 	uint32_t temp = 0;
 
+	//enable the PCLK
+	GPIO_PCLKControl(pGPIOHandle->pGPIOx, EN);
+
 	/*initialize mode register*/
 	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG){
 		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));

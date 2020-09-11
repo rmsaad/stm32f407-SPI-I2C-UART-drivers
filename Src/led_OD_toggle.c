@@ -24,7 +24,6 @@ int main(void)
 	gpioLED.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_OD;
 	gpioLED.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
 
-	GPIO_PCLKControl(GPIOD, ENABLE);
 	GPIO_Init(&gpioLED);
 
 	while(1){

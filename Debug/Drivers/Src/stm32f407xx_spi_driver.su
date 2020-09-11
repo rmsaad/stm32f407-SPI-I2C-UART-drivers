@@ -1,9 +1,0 @@
-stm32f407xx_spi_driver.c:25:6:SPI_PCLKControl	16	static
-stm32f407xx_spi_driver.c:70:6:SPI_Init	24	static
-stm32f407xx_spi_driver.c:118:6:SPI_DeInit	16	static
-stm32f407xx_spi_driver.c:148:6:SPI_SendData	24	static
-stm32f407xx_spi_driver.c:182:6:SPI_ReceiveData	24	static
-stm32f407xx_spi_driver.c:199:6:SPI_IRQInterruptConfig	16	static
-stm32f407xx_spi_driver.c:213:6:SPI_IRQPriorityConfig	16	static
-stm32f407xx_spi_driver.c:226:6:SPI_IRQHandling	16	static
-stm32f407xx_spi_driver.c:233:9:SPI_GetFlagStatus	16	static

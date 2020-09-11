@@ -8,7 +8,7 @@
 #define INC_STM32F407XX_H_
 
 #include <stdint.h>
-
+#include <stddef.h>
 
 /******************************************************************************/
 /**************************** Generic Macros **********************************/
@@ -271,6 +271,13 @@ typedef struct{																/*Off. Description*/
 #define IRQ_NO_EXTI9_5			23
 #define IRQ_NO_EXTI15_10		40
 
+#define IRQ_NO_SPI1				42
+#define IRQ_NO_SPI2				43
+#define IRQ_NO_SPI3				51
+#define IRQ_NO_SPI4				84
+#define IRQ_NO_SPI5				85
+#define IRQ_NO_SPI6				86
+
 /******************************************************************************/
 /***************** SPI Peripheral Registers Bit Positions *********************/
 
@@ -392,5 +399,7 @@ typedef struct{																/*Off. Description*/
 #define I2C2_PCLK_DI()			(RCC->RCC_APB1ENR  &= ~(1 << 22))
 #define I2C3_PCLK_DI()			(RCC->RCC_APB1ENR  &= ~(1 << 23))
 
+#include "stm32f407xx_gpio_driver.h"
+#include "stm32f407xx_spi_driver.h"
 
 #endif /* INC_STM32F407XX_H_ */
