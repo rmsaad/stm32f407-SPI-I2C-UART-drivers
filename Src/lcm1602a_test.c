@@ -20,15 +20,10 @@ int main(void)
 	GPIO_RegDef_t *pControlPorts[3] = {GPIOC, GPIOC, GPIOC};
 	uint8_t controlPins[3] = {GPIO_PIN_1, GPIO_PIN_5, GPIO_PIN_4};
 
-	/*Data and Control Handles*/
-	GPIO_Handle_t gpioData[DATA_8];
-	GPIO_Handle_t gpioControl[CONTROL_PIN_COUNT];
-
 	/*enable all the GPIO ports for 8 bit transmission*/
-	LCM1602a_Data8_GPIOInit(pDataPorts, dataPins, pControlPorts, controlPins, gpioData, gpioControl);
+	LCM1602a_Data8_GPIOInit(pDataPorts, dataPins, pControlPorts, controlPins);
 
 	/*Initialize the display*/
-
 	LCM1602a_Write8_Data(0b00110000, 0, 0);
 	LCM1602a_Write8_Data(0b00001110, 0, 0);
 	LCM1602a_Write8_Data(0b00000110, 0, 0);
@@ -36,9 +31,10 @@ int main(void)
 	/*clear the display*/
 	LCM1602a_Write8_Data(0b00000001, 0, 0);
 
-	// Write messages
+	/*Write Message to Display*/
 	LCM1602a_Write8_Message((char*)"Hello World");
 
+	/*hang forever*/
 	while(1);
 
 	return 0;
