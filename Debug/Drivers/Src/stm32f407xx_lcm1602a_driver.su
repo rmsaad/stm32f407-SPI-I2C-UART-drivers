@@ -1,0 +1,5 @@
+stm32f407xx_lcm1602a_driver.c:140:6:LCM1602a_Hang_Busy_Flag	16	static
+stm32f407xx_lcm1602a_driver.c:33:6:LCM1602a_Data8_GPIOInit	32	static
+stm32f407xx_lcm1602a_driver.c:70:6:LCM1602a_Data8_GPIODeInit	8	static
+stm32f407xx_lcm1602a_driver.c:92:6:LCM1602a_Write8_Data	24	static
+stm32f407xx_lcm1602a_driver.c:122:6:LCM1602a_Write8_Message	16	static

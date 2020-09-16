@@ -33,7 +33,6 @@ int main(void){
 
 	// SPE bit changed only after initialization
 	SPI_PeripheralControl(SPI2, EN);
-
 	SPI_SendData(SPI2, (uint8_t*)user_data, strlen(user_data));
 
 	while( SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG));

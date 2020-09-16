@@ -32,7 +32,7 @@ int main(void)
 	LCM1602a_Write8_Data(0b00000001, 0, 0);
 
 	/*Write Message to Display*/
-	LCM1602a_Write8_Message((char*)"Hello World");
+	LCM1602a_Write8_Message((char*)"Hello");
 
 	/*hang forever*/
 	while(1);
