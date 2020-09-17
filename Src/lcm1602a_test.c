@@ -1,7 +1,6 @@
 /*
  * lcm1602a_test.c
  *
- *  Created on: Sep 11, 2020
  *      Author: Rami
  */
 
@@ -32,7 +31,7 @@ int main(void)
 	LCM1602a_Write8_Data(0b00000001, 0, 0);
 
 	/*Write Message to Display*/
-	LCM1602a_Write8_Message((char*)"Hello");
+	LCM1602a_Write8_Message((char*)"Hello Test 2");
 
 	/*hang forever*/
 	while(1);

@@ -1,7 +1,6 @@
 /*
  * stm32f407xx_spi_driver.h
  *
- *  Created on: Sep 8, 2020
  *      Author: Rami
  */
 
