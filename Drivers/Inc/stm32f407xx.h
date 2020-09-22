@@ -79,7 +79,6 @@
 #define UART7_BASE				(APB1PERIPH_BASE + 0x07800UL)				/*UART7 Base Address*/
 #define UART8_BASE				(APB1PERIPH_BASE + 0x07C00UL)				/*UART8 Base Address*/
 
-
 /*APB2 PERIPHERAL BASE ADDRESSES*/
 #define TIM1_BASE				(APB2PERIPH_BASE)							/*TIM1 Base Address*/
 #define TIM8_BASE				(APB2PERIPH_BASE + 0x00400UL)				/*TIM8 Base Address*/
@@ -98,7 +97,6 @@
 #define SPI6_BASE				(APB2PERIPH_BASE + 0x05400UL)				/*SPI6 Base Address*/
 #define SAI1_BASE				(APB2PERIPH_BASE + 0x05800UL)				/*SAI1 Base Address*/
 #define LCD_TFT_BASE			(APB2PERIPH_BASE + 0x06800UL)				/*LCD_TFT Base Address*/
-
 
 /*AHB1 PERIPHERAL BASE ADDRESSES*/
 #define GPIOA_BASE				(AHB1PERIPH_BASE)							/*GPIOA Base Address*/
@@ -122,15 +120,12 @@
 #define DMA2D_BASE				(AHB1PERIPH_BASE + 0x0B000UL)				/*DMAMUX1 Base Address*/
 #define USB_OTG_HS_BASE			(AHB1PERIPH_BASE + 0x20000UL)				/*USB1_OTG_HS Base Address*/
 
-
-
 /*AHB2 PERIPHERAL BASE ADDRESSES*/
 #define USB_OTG_FS_BASE			(AHB2PERIPH_BASE)							/*USB2_OTG_HS Base Address*/
 #define DCMI_BASE				(AHB2PERIPH_BASE + 0x50000UL)				/*DCMI Base Address*/
 #define CRYPTO_BASE				(AHB2PERIPH_BASE + 0x60000UL)				/*CRYPTO Base Address*/
 #define HASH_BASE				(AHB2PERIPH_BASE + 0x60400UL)				/*HASH Base Address*/
 #define RNG_BASE				(AHB2PERIPH_BASE + 0x60800UL)				/*RNG Base Address*/
-
 
 /*AHB3 PERIPHERAL BASE ADDRESSES*/
 #define FSMC_CONTROL_BASE		(AHB3PERIPH_BASE)							/*FSMC_CONTROL Base Address*/
