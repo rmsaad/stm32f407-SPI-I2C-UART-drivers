@@ -33,7 +33,7 @@ int main(void)
 	/*Write Message to Display*/
 	LCM1602a_Write8_Message((char*)"Hello Test 2");
 
-	/*hang forever */
+	/*hang forever*/
 	while(1);
 
 	return 0;
