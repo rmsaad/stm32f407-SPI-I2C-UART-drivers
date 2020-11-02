@@ -110,6 +110,37 @@ void LCM1602a_Write8_Data(uint8_t dataValues, uint8_t RS, uint8_t RW){
 
 }
 
+void LCM1602a_Write4_Data(uint8_t dataValues, uint8_t RS, uint8_t RW){
+
+	//LCM1602a_Write8_Data(dataValues, RS, RW);
+	//LCM1602a_Write8_Data((dataValues << 4), RS, RW);
+
+	for(int i = 1; i >= 0; i--){
+		LCM1602a_Hang_Busy_Flag();															//hang until busy flag is reset
+
+		/*for(int j = 0; j < DATA_4; j++){													//write to data lines
+			GPIO_WriteToOutputPin(gpioData[j].pGPIOx, gpioData[j].GPIO_PinConfig.GPIO_PinNumber, ((dataValues >> (j + 4*i)) & 1));
+		}*/
+
+		GPIO_WriteToOutputPin(gpioData[4].pGPIOx, gpioData[4].GPIO_PinConfig.GPIO_PinNumber, ((dataValues >> (0 + 4*i)) & 1));
+		GPIO_WriteToOutputPin(gpioData[5].pGPIOx, gpioData[5].GPIO_PinConfig.GPIO_PinNumber, ((dataValues >> (1 + 4*i)) & 1));
+		GPIO_WriteToOutputPin(gpioData[6].pGPIOx, gpioData[6].GPIO_PinConfig.GPIO_PinNumber, ((dataValues >> (2 + 4*i)) & 1));
+		GPIO_WriteToOutputPin(gpioData[7].pGPIOx, gpioData[7].GPIO_PinConfig.GPIO_PinNumber, ((dataValues >> (3 + 4*i)) & 1));
+
+																							//write to control lines RS, RW
+		GPIO_WriteToOutputPin(gpioControl[0].pGPIOx, gpioControl[0].GPIO_PinConfig.GPIO_PinNumber, RS);
+		GPIO_WriteToOutputPin(gpioControl[1].pGPIOx, gpioControl[1].GPIO_PinConfig.GPIO_PinNumber, RW);
+
+																							//set E to High
+		GPIO_WriteToOutputPin(gpioControl[2].pGPIOx, gpioControl[2].GPIO_PinConfig.GPIO_PinNumber, HIGH);
+
+		for(int j = CONTROL_PIN_COUNT - 1; j >= 0; j--){ 									//reset all control pins
+			GPIO_WriteToOutputPin(gpioControl[j].pGPIOx, gpioControl[j].GPIO_PinConfig.GPIO_PinNumber, LOW);
+		}
+	}
+
+}
+
 /**
  * @fn			: LCM1602a_Write8_Message
  *
@@ -129,6 +160,15 @@ void LCM1602a_Write8_Message(char *Message){
 	}
 }
 
+void LCM1602a_Write4_Message(char *Message){
+
+	uint16_t Len = (uint16_t)strlen(Message);											/*find length of the message*/
+
+	for(int i = 0; i < Len; i++){														/*write message to display*/
+		LCM1602a_Write4_Data((int)*Message, 1, 0);
+		Message++;
+	}
+}
 /**
  * @fn			: LCM1602a_Hang_Busy_Flag
  *
