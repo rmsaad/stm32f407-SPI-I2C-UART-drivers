@@ -17,8 +17,8 @@ void delay(uint16_t kilo_cycles){
 int main(void)
 {
 	GPIO_Handle_t gpioLED;
-	gpioLED.pGPIOx = GPIOD;
-	gpioLED.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_13;
+	gpioLED.pGPIOx = GPIOA;
+	gpioLED.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
 	gpioLED.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
 	gpioLED.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	gpioLED.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_OD;
@@ -38,7 +38,7 @@ int main(void)
 	while(1){
 		if (GPIO_ReadFromInputPin(GPIOB,GPIO_PIN_12) == LOW){
 			delay(1000);
-			GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+			GPIO_TogglePin(GPIOA, GPIO_PIN_0);
 		}
 	}
 }
