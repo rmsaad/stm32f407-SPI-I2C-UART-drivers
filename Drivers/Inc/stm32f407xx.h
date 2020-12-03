@@ -217,6 +217,19 @@ typedef struct{																/*Off. Description*/
 	_IO uint32_t SPI_I2SPR;													/*0x20 SPI_I2S prescaler register*/
 }SPI_RegDef_t;
 
+typedef struct{																/*Off. Description*/
+	_IO uint32_t I2C_CR1;													/*0x00 I2C control register 1*/
+	_IO uint32_t I2C_CR2;													/*0x04 I2C control register 2*/
+	_IO uint32_t I2C_OAR1;													/*0x08 I2C own address register 1*/
+	_IO uint32_t I2C_OAR2;													/*0x0C I2C own address register 2*/
+	_IO uint32_t I2C_DR;													/*0x10 I2C data register*/
+	_IO uint32_t I2C_SR1;													/*0x14 I2C status register 1*/
+	_IO uint32_t I2C_SR2;													/*0x18 I2C status register 2*/
+	_IO uint32_t I2C_CCR;													/*0x1C I2C clock counter register*/
+	_IO uint32_t I2C_TRISE;													/*0x20 I2C trise register*/
+	_IO uint32_t I2C_FLTR;													/*0x24 I2C flter register*/
+}I2C_RegDef_t;
+
 /******************************************************************************/
 /************************* Peripheral Definitions *****************************/
 
@@ -244,6 +257,10 @@ typedef struct{																/*Off. Description*/
 #define SPI4					((SPI_RegDef_t*)SPI4_BASE)
 #define SPI5					((SPI_RegDef_t*)SPI5_BASE)
 #define SPI6					((SPI_RegDef_t*)SPI6_BASE)
+
+#define I2C1					((I2C_RegDef_t*)I2C1_BASE)
+#define I2C2					((I2C_RegDef_t*)I2C2_BASE)
+#define I2C3					((I2C_RegDef_t*)I2C3_BASE)
 
 #define GPIO_BASE_TO_CODE(x)	((x == GPIOA) ? 0 :\
 								 (x == GPIOB) ? 1 :\
@@ -312,6 +329,60 @@ typedef struct{																/*Off. Description*/
 #define SPI_SR_BSY				7
 #define SPI_SR_FRE				8
 
+/*I2C CR1*/
+#define I2C_CR1_PE				0
+#define I2C_CR1_SMBUS			1
+#define I2C_CR1_SMBTYPE			3
+#define I2C_CR1_ENARP			4
+#define I2C_CR1_ENPEC			5
+#define I2C_CR1_ENGC			6
+#define I2C_CR1_NOSTRETCH		7
+#define I2C_CR1_START			8
+#define I2C_CR1_STOP			9
+#define I2C_CR1_ACK				10
+#define I2C_CR1_POS				11
+#define I2C_CR1_PEC				12
+#define I2C_CR1_ALERT			13
+#define I2C_CR1_SWRST			15
+
+/*I2C CR2*/
+#define I2C_CR2_FREQ			0
+#define I2C_CR2_ITERREN			8
+#define I2C_CR2_ITEVTEN			9
+#define I2C_CR2_ITBUFFEN		10
+#define I2C_CR2_DMAEN			11
+#define I2C_CR2_LAST			12
+
+/*I2C SR1*/
+#define I2C_SR1_SB				0
+#define I2C_SR1_ADDR			1
+#define I2C_SR1_BTF				2
+#define I2C_SR1_ADD10			3
+#define I2C_SR1_STOPF			4
+#define I2C_SR1_RXNE			6
+#define I2C_SR1_TXE				7
+#define I2C_SR1_BERR			8
+#define I2C_SR1_ARLO			9
+#define I2C_SR1_AF				10
+#define I2C_SR1_OVR				11
+#define I2C_SR1_PECERR			12
+#define I2C_SR1_TIMEOUT			14
+#define I2C_SR1_SMBALERT		15
+
+/*I2C SR2*/
+#define I2C_SR2_MSL				0
+#define I2C_SR2_BUSY			1
+#define I2C_SR2_TRA				2
+#define I2C_SR2_GENCALL			4
+#define I2C_SR2_SMBDEFAULT		5
+#define I2C_SR2_SMBHOST			6
+#define I2C_SR2_DUALF			7
+#define I2C_SR2_PEC				8
+
+/*I2C CCR*/
+#define I2C_CCR_CCR				0
+#define I2C_CCR_DUTY			14
+#define I2C_CCR_F_S				15
 
 /******************************************************************************/
 /******************* Peripheral Clock Enables/Disables ************************/
@@ -396,5 +467,6 @@ typedef struct{																/*Off. Description*/
 
 #include "stm32f407xx_gpio_driver.h"
 #include "stm32f407xx_spi_driver.h"
+#include "stm32f407xx_i2c_driver.h"
 
 #endif /* INC_STM32F407XX_H_ */
