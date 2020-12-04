@@ -35,7 +35,7 @@ typedef struct{
 	uint32_t 	I2C_SCLSpeed;
 	uint8_t 	I2C_DeviceAddress;
 	uint8_t 	I2C_ACKControl;
-	uint16_t	 I2C_FMDutyCycle;
+	uint16_t	I2C_FMDutyCycle;
 }I2C_Config_t;
 
 /*I2C Handle Structure*/
@@ -62,9 +62,6 @@ void I2C_DeInit(I2C_RegDef_t *pI2Cx);
 void I2C_IRQInterruptConfig(uint8_t IRQNumber, uint8_t en_di);
 void I2C_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 
-void I2C_ClearOVRFlag(I2C_RegDef_t *pI2Cx);
-void I2C_Close_Transmission(I2C_Handle_t *pI2CHandle);
-void I2C_Close_Reception(I2C_Handle_t *pI2CHandle);
 
 /*Application Callback*/
 void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEv);
