@@ -291,7 +291,7 @@ typedef struct{																/*Off. Description*/
 #define IRQ_NO_SPI6				86
 
 /******************************************************************************/
-/***************** SPI Peripheral Registers Bit Positions *********************/
+/*******************  Peripheral Registers Bit Positions **********************/
 
 /*SPI CR1*/
 #define SPI_CR1_CPHA			0
